@@ -5,10 +5,11 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Scanner;
+import java.util.stream.Stream;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
 import java.io.*;
 import java.util.*;
-import java.nio.*;
-import java.nio.file.Files;
 import java.nio.file.Paths;
 
 class Main {
@@ -22,6 +23,19 @@ class Main {
     getkw.close();
     Main Dinit = new Main();
     System.out.println(Dinit.dloader(url, kfile));
+    ZipFile Vanilla = new ZipFile(new File("Vanilla.zip"));
+    Enumeration<? extends ZipEntry> entries = Vanilla.entries();
+
+    while(entries.hasMoreElements()){
+        ZipEntry entry = entries.nextElement();
+        //String nextr =  entries.nextElement();
+        File folderw =new File("tkwgter5834");
+        InputStream stream = Vanilla.getInputStream(entry);
+        FileInputStream inpure= new FileInputStream("Vanilla.zip");
+        FileOutputStream outter = new FileOutputStream(new File(folderw +"//"+ entry.toString()));
+        outter.write(inpure.readAllBytes());
+        outter.close();
+    }
 
   }
   private String dloader(String kurl, String fname)throws IOException{
