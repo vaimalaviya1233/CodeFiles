@@ -1,0 +1,34 @@
+import string
+
+# license generator by following format XXXX-XXXX-XXXX-XXXX-XXXX-XXXX
+
+def generate_license(filename):
+    with open(filename, 'r') as f:
+        lines = f.readlines()
+    lines = [l.strip() for l in lines]
+    lines = [l for l in lines if l]
+    lines = [l for l in lines if not l.startswith('#')]
+    lines = [l for l in lines if not l.startswith('//')]
+    lines = [l for l in lines if not l.startswith('/*')]
+    lines = [l for l in lines if not l.startswith('*/')]
+    lines = [l for l in lines if not l.startswith('//')]
+    lines = [l for l in lines if not l.startswith('/*')]
+    lines = [l for l in lines if not l.startswith('//')]
+    return lines
+
+def generate_license_file(filename):
+    lines = generate_license(filename)
+    with open(filename, 'w') as f:
+        f.writelines(lines)
+        f.write('\n')
+        f.close()
+    return filename
+
+if __name__ == '__main__':
+    print()
+    # generate_license_file('LICENSE')
+    # generate_license_file('LICENSE.txt')
+    # generate_license_file('LICENSE.md')
+    # generate_license_file('LICENSE.rst')
+    # generate_license_file('LICENSE.txt')
+    
