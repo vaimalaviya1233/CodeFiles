@@ -1,2 +1,16 @@
 
 *.pdf
+*.class
+*.exe
+*.properties
+*.lock
+*.yml
+Kotlin/Hands-On-Data-Structures-and-Algorithms-with-Kotlin/Chapter08/.project
+*.prefs
+*.bin
+*.properties
+*.proto
+*.prefs
+*.properties
+Kotlin/Hands-On-Data-Structures-and-Algorithms-with-Kotlin/Chapter08/.project
+Kotlin/Hands-On-Data-Structures-and-Algorithms-with-Kotlin/Chapter08/.settings/org.eclipse.buildship.core.prefs
